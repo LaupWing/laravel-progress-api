@@ -10,7 +10,8 @@ class TaskDate extends Model
    use HasFactory;
 
    protected $fillable = [
-      "finished"
+      "finished",
+      "date"
    ];
 
    public function tasks() {
