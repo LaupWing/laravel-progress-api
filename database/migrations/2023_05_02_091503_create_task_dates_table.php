@@ -20,6 +20,7 @@ return new class extends Migration
             \App\Models\Task::class,
             "task_id"
          )->constrained("tasks")->onDelete("cascade");
+         $table->unique(["date", "task_is"]);
       });
    }
 
