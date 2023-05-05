@@ -16,6 +16,10 @@ return new class extends Migration
          $table->timestamps();
          $table->string("name");
          $table->string("section");
+         $table->foreignIdFor(
+            \App\Models\User::class,
+            "user_id"
+         )->constrained("users")->onDelete("cascade");
       });
    }
 
