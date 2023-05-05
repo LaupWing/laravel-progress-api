@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Task;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class TaskDateFactory extends Factory
    public function definition(): array
    {
       return [
-         "date" => fake()->dateTimeBetween("-10 days", now())
+         "date" => fake()->dateTimeBetween("-10 days", now()),
+         "task_id" => Task::all()->random()->id
       ];
    }
 }

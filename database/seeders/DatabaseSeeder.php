@@ -14,15 +14,13 @@ class DatabaseSeeder extends Seeder
    {
       \App\Models\User::factory(10)->create();
       $tasks = \App\Models\Task::factory(200)->create();
-      // foreach ($tasks as $task) {
-      //    foreach ()
-      //    \App\Models\TaskDate::factory()->create([
-      //       "date" => fake()->date("Y-m-d", "-{$key} day")
-      //    ]);
-      // }
-      foreach (range(1, 10) as $value) {
-         print_r($value);
-     }
+      foreach ($tasks as $task) {
+         foreach (range(1, 10) as $value) {
+            \App\Models\TaskDate::factory()->create([
+               "date" => fake()->date("Y-m-d", "-{$value} day")
+            ]);
+         }
+      }
       // \App\Models\User::factory()->create([
       //     'name' => 'Test User',
       //     'email' => 'test@example.com',
