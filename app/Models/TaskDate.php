@@ -12,4 +12,8 @@ class TaskDate extends Model
    protected $fillable = [
       "finished"
    ];
+
+   public function tasks() {
+      return $this->belongsTo(Task::class);
+   }
 }
