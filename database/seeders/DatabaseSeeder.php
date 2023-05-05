@@ -12,12 +12,12 @@ class DatabaseSeeder extends Seeder
     */
    public function run(): void
    {
-      \App\Models\User::factory(10)->create();
-      $tasks = \App\Models\Task::factory(200)->create();
+      \App\Models\User::factory(3)->create();
+      $tasks = \App\Models\Task::factory(30)->create();
       foreach ($tasks as $task) {
          foreach (range(1, 10) as $value) {
             \App\Models\TaskDate::factory()->create([
-               "date" => fake()->date("Y-m-d", "-{$value} days"),
+               "date" => date("Y-m-d",  strtotime("-{$value} days")),
                "task_id" => $task["id"]
             ]);
          }
