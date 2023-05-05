@@ -15,7 +15,7 @@ return new class extends Migration
          $table->id();
          $table->timestamps();
          $table->date("date");
-         $table->boolean("finished");
+         $table->boolean("finished")->default(false);
          $table->foreignIdFor(
             \App\Models\Task::class,
             "task_id"

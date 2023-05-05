@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
       foreach ($tasks as $task) {
          foreach (range(1, 10) as $value) {
             \App\Models\TaskDate::factory()->create([
-               "date" => fake()->date("Y-m-d", "-{$value} day")
+               "date" => fake()->date("Y-m-d", "-{$value} days"),
+               "task_id" => $task["id"]
             ]);
          }
       }
