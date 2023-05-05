@@ -14,7 +14,6 @@ return new class extends Migration
       Schema::create("task_dates", function (Blueprint $table) {
          $table->id();
          $table->timestamps();
-         $table->date("date");
          $table->boolean("finished");
          $table->foreignIdFor(
             \App\Models\Task::class,
