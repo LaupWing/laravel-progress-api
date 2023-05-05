@@ -19,7 +19,7 @@ return new class extends Migration
          $table->foreignIdFor(
             \App\Models\Task::class,
             "task_id"
-         )->constrained("tasks");
+         )->constrained("tasks")->onDelete("cascade");
       });
    }
 
