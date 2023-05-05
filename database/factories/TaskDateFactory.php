@@ -17,7 +17,7 @@ class TaskDateFactory extends Factory
    public function definition(): array
    {
       return [
-         //
+         "date" => fake()->dateTimeBetween("-10 days", now())
       ];
    }
 }
