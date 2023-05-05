@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder
    {
       \App\Models\User::factory(10)->create();
       $tasks = \App\Models\Task::factory(200)->create();
-      print_r($tasks[0]["id"]);
+      foreach ($tasks as $key => $value) {
+         
+      }
       // \App\Models\User::factory()->create([
       //     'name' => 'Test User',
       //     'email' => 'test@example.com',
