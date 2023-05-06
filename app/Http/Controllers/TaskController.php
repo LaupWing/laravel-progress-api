@@ -26,7 +26,11 @@ class TaskController extends Controller
    public function store(Request $request)
    {
       $placeholderUser = User::find(1); 
-      
+      $placeholderUser->tasks()->create(
+         $request->validate([
+            "name" => ["required"]
+         ])
+      );
    }
 
    /**
