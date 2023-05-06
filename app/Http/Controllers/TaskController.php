@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class TaskController extends Controller
 {
    /**
@@ -14,7 +15,8 @@ class TaskController extends Controller
     */
    public function index()
    {
-      return User::find(1)->tasks()->with("taskDates")->get();
+      $placeholderUser = User::find(1); 
+      return $placeholderUser->tasks()->with("taskDates")->get();
    }
 
 
@@ -23,6 +25,7 @@ class TaskController extends Controller
     */
    public function store(Request $request)
    {
+      $placeholderUser = User::find(1); 
       
    }
 
