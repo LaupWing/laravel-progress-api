@@ -14,7 +14,7 @@ class TaskController extends Controller
     */
    public function index()
    {
-      return User::find(1);
+      return User::find(1)->tasks()->get();
    }
 
    /**
