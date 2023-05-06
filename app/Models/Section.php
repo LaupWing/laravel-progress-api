@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Section extends Model
 {
-    use HasFactory;
+   use HasFactory;
+
+   public function tasks(){
+      return ;
+   }
 }
