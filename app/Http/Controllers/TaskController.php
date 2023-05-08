@@ -16,7 +16,7 @@ class TaskController extends Controller
    public function index()
    {
       $placeholderUser = User::find(1); 
-      return $placeholderUser->tasks()->with("taskDates")->get();
+      return $placeholderUser->tasks()->with("section")->with("taskDates")->get();
    }
 
 
