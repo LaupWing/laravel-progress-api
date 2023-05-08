@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Section;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +20,8 @@ class TaskFactory extends Factory
    {
       return [
          "name" => fake()->sentence(1),
-         "user_id" => User::all()->random()->id
+         "user_id" => User::all()->random()->id,
+         "section_id" => fake()->boolean(50) ? Section::all()->random()->id : null
       ];
    }
 }

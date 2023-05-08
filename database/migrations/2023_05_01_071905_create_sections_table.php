@@ -18,7 +18,7 @@ return new class extends Migration
          $table->foreignIdFor(
             \App\Models\User::class,
             "user_id"
-         )->constrained("user")->onDelete("cascade");
+         )->constrained("users")->onDelete("cascade");
       });
    }
 

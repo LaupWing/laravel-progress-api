@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
    public function run(): void
    {
       \App\Models\User::factory(3)->create();
+      \App\Models\Section::factory(5)->create();
       $tasks = \App\Models\Task::factory(30)->create();
       foreach ($tasks as $task) {
          foreach (range(1, 10) as $value) {
