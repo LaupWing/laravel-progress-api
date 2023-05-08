@@ -24,4 +24,14 @@ class AuthController extends Controller
          "status" => "success"
       ]);
    }
+   public function destroy(Request $request){
+      Auth::guard("api")->logout();
+
+      $request->session()->invalidate();
+      $request->session()->regenerateToken();
+
+      return response()->json([
+         "status" => "success"
+      ]);
+   }
 }
