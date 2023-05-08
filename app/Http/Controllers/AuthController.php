@@ -18,5 +18,10 @@ class AuthController extends Controller
             "email" => "Authentication failed"
          ]);
       }
+      $request->session()->regenerate();
+
+      return response()->json([
+         "status" => "success"
+      ]);
    }
 }
