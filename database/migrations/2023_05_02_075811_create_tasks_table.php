@@ -15,11 +15,14 @@ return new class extends Migration
          $table->id();
          $table->timestamps();
          $table->string("name");
-         $table->string("section");
          $table->foreignIdFor(
             \App\Models\User::class,
             "user_id"
          )->constrained("users")->onDelete("cascade");
+         $table->foreignIdFor(
+            \App\Models\Section::class,
+            "section_id"
+         )->nullable()->constrained("sections")->onDelete("cascade");
       });
    }
 

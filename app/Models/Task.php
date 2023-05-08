@@ -21,7 +21,7 @@ class Task extends Model
    }
 
    public function section(): BelongsTo {
-      return $this->belongsTo(section::class, "user_id");
+      return $this->belongsTo(section::class, "section_id");
    }
 
    public function taskDates(): HasMany {
