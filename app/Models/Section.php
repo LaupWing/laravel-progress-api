@@ -4,12 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Section extends Model
 {
    use HasFactory;
 
-   public function tasks(){
-      return ;
+   public function tasks(): HasMany{
+      return $this->hasMany(
+         Task::class,
+         "section_id"
+      );;
    }
 }

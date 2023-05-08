@@ -20,6 +20,10 @@ class Task extends Model
       return $this->belongsTo(User::class, "user_id");
    }
 
+   public function section(): BelongsTo {
+      return $this->belongsTo(section::class, "user_id");
+   }
+
    public function taskDates(): HasMany {
       return $this->hasMany(
          TaskDate::class,
